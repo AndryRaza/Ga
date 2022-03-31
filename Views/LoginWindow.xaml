@@ -1,0 +1,22 @@
+﻿<Window x:Class="Ga.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ga.Views"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox Margin="248,192,248,217">
+            <TextBox.Text>
+                <Binding
+                        Path="LoginId"
+                        UpdateSourceTrigger="PropertyChanged">
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Content="Envoyer le lien" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" Height="44" Width="88" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,120,0,0" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="124" FontSize="36"/>
+
+    </Grid>
+</Window>
