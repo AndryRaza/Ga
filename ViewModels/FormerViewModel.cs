@@ -8,12 +8,14 @@ using GestionDesAbsencesv1.Models;
 
 namespace Ga.ViewModels
 {
-    class FomerViewModel : ObservableObject
+    class FormerViewModel : ObservableObject
     {
         User userFormer = new();
         string _userId;
 
         public string UserId { get => _userId; set => OnPropertyChanged(ref _userId, value); }
+
+
 
     }
 }

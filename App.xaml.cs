@@ -20,8 +20,10 @@ namespace Ga
         void App_Startup(object sender, StartupEventArgs e)
         {
             //RegisterUriScheme();
-         
-            if(e.Args.Length > 0)
+            //MainWindow window = new();
+            //window.Show();
+
+            if (e.Args.Length > 0)
             {
                 MainWindow window = new();
                 window.Show();
@@ -31,7 +33,7 @@ namespace Ga
                 LoginWindow loginWindow = new LoginWindow();
                 loginWindow.Show();
             }
-     
+
 
             //Process.Start(new ProcessStartInfo()
             //{

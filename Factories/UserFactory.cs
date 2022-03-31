@@ -28,7 +28,7 @@ namespace Ga.Factories
                 user.RoleId = role.RoleId;
 
                 UserVM.Store(user);
-                
+                UserVM.associatePromotion(user.UserId, 1);
             }
         }
 

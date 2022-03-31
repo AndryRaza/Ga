@@ -18,11 +18,13 @@ namespace Ga
         public MainWindow()
         {
             //Si la BDD n'existe pas, on la crée
-            //using(var db = new DB())
-            //{
-            //    db.Database.EnsureCreated();
-            //}
-            //new Seeds();
+            using (var db = new DB())
+            {
+                if(db.Database.EnsureCreated())
+                {
+                    new Seeds();
+                }
+            }
             InitializeComponent();
         }
 
