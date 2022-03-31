@@ -11,17 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ga.ViewModels;
 
 namespace Ga.Views
 {
     /// <summary>
     /// Logique d'interaction pour Former.xaml
     /// </summary>
-    public partial class Former : Window
+    public partial class FormerWindow : Window
     {
-        public Former()
+
+        readonly FormerViewModel fvm = new();
+        public FormerWindow()
         {
+            DataContext = fvm;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var test = fvm.getStudents();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Ga.Factories
             Promotion promotion = new();
             promotion.Label = "CDA 2022-2023";
             promotionVM.store(promotion);
-            //userVM.associatePromotion(1, 1);
+
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿<Window x:Class="Ga.Views.FormerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ga.Views" xmlns:viewmodels="clr-namespace:Ga.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:FormerViewModel}"
+        mc:Ignorable="d"
+        Title="Former" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Column="0" Height="20" Margin="10,0,10,0" ItemsSource="{Binding Path=Promotions}" DisplayMemberPath="Label" SelectedValuePath="PromotionId" SelectedValue="{Binding Path=PromotionId}">
+        </ComboBox>
+        <Button Grid.Column="0" Height="20" Margin="30,100,30,0" Content="Valider" Click="Button_Click">
+        </Button>
+        <DataGrid Grid.Column="1"/>
+    </Grid>
+</Window>

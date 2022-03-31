@@ -6,6 +6,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Diagnostics;
 using Ga.Views;
+using Ga.ViewModels;
 
 namespace Ga
 {
@@ -14,18 +15,20 @@ namespace Ga
     /// </summary>
     public partial class MainWindow : Window
     {
-
+ 
         public MainWindow()
         {
             //Si la BDD n'existe pas, on la crée
-            using (var db = new DB())
-            {
-                if(db.Database.EnsureCreated())
-                {
-                    new Seeds();
-                }
-            }
+            //using (var db = new DB())
+            //{
+            //    if(db.Database.EnsureCreated())
+            //    {
+            //        new Seeds();
+            //    }
+            //}
+   
             InitializeComponent();
+
         }
 
 

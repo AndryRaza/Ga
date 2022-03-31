@@ -23,16 +23,20 @@ namespace Ga
             //MainWindow window = new();
             //window.Show();
 
-            if (e.Args.Length > 0)
-            {
-                MainWindow window = new();
-                window.Show();
-            }
-            else
-            {
-                LoginWindow loginWindow = new LoginWindow();
-                loginWindow.Show();
-            }
+            FormerWindow fm = new();
+            fm.Show();
+
+
+            //if (e.Args.Length > 0)
+            //{
+            //    MainWindow window = new();
+            //    window.Show();
+            //}
+            //else
+            //{
+            //    LoginWindow loginWindow = new LoginWindow();
+            //    loginWindow.Show();
+            //}
 
 
             //Process.Start(new ProcessStartInfo()
