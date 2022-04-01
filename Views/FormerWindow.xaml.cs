@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Ga.ViewModels;
+
 
 namespace Ga.Views
 {
@@ -30,7 +26,9 @@ namespace Ga.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var test = fvm.getStudents();
+            fvm.getStudents();
+            DG1.ItemsSource = fvm.UsersPromotion;
         }
+
     }
 }

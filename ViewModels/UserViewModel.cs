@@ -9,7 +9,7 @@ using Ga.Services;
 
 namespace Ga.ViewModels
 {
-    sealed class UserViewModel : INotifyPropertyChanged
+    sealed class UserViewModel 
     {
 
         //private User user;
@@ -31,15 +31,6 @@ namespace Ga.ViewModels
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChange(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
 
 
     }

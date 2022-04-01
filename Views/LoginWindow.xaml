@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ga.Views"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="800" 
+        >
     <Grid>
-        <TextBox Margin="248,192,248,217">
+        <TextBox  Margin="248,192,248,217">
             <TextBox.Text>
                 <Binding
                         Path="LoginId"
@@ -17,6 +18,6 @@
         </TextBox>
         <Button Content="Envoyer le lien" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" Height="44" Width="88" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,120,0,0" Text="Login" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="124" FontSize="36"/>
-
+        
     </Grid>
 </Window>

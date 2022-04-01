@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ga.Views" xmlns:viewmodels="clr-namespace:Ga.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:FormerViewModel}"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="Former" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,6 +16,12 @@
         </ComboBox>
         <Button Grid.Column="0" Height="20" Margin="30,100,30,0" Content="Valider" Click="Button_Click">
         </Button>
-        <DataGrid Grid.Column="1"/>
+        <DataGrid x:Name="DG1" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False" Grid.Column="1" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Path=FirstName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Path=LastName}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Present?"  />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

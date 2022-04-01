@@ -7,15 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="43*"/>
-            <ColumnDefinition Width="757*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="212,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="139" Width="360" FontSize="72"><Run Language="fr-fr" Text="ANDRY"/></TextBlock>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="105,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="139" Width="360" FontSize="72"><Run Language="fr-fr" Text="ANDRY"/></TextBlock>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="392,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="140" Width="360" FontSize="72"><Run Language="fr-fr" Text="ANDRY"/></TextBlock>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="140" Width="360" FontSize="72"><Run Language="fr-fr" Text="ANDRY"/></TextBlock>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="463,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="140" Width="360" FontSize="72"><Run Language="fr-fr" Text="ANDRY"/></TextBlock>
-
+        <ContentControl x:Name="contentControl" />
     </Grid>
 </Window>

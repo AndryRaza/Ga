@@ -20,30 +20,15 @@ namespace Ga
         void App_Startup(object sender, StartupEventArgs e)
         {
             //RegisterUriScheme();
-            //MainWindow window = new();
-            //window.Show();
 
-            FormerWindow fm = new();
-            fm.Show();
+            //FormerWindow fm = new();
+            //fm.Show();
 
+            //LoginWindow loginW = new();
+            //loginW.Show();
 
-            //if (e.Args.Length > 0)
-            //{
-            //    MainWindow window = new();
-            //    window.Show();
-            //}
-            //else
-            //{
-            //    LoginWindow loginWindow = new LoginWindow();
-            //    loginWindow.Show();
-            //}
-
-
-            //Process.Start(new ProcessStartInfo()
-            //{
-            //    FileName = "Ga.exe",
-            //    UseShellExecute = true, // Be sure to set this to true (not the default value on .NET Core)
-            //});
+            MainWindow mainWindow = new();
+            mainWindow.Show();
 
         }
 
@@ -56,9 +41,6 @@ namespace Ga
         {
             using (var key = Registry.CurrentUser.CreateSubKey("SOFTWARE\\Classes\\" + UriScheme))
             {
-                // Replace typeof(App) by the class that contains the Main method or any class located in the project that produces the exe.
-                // or replace typeof(App).Assembly.Location by anything that gives the full path to the exe
-                //string applicationLocation = @"C:\Users\widoo\source\repos\Test\bin\Debug\net5.0-windows\Test.exe";
                 string applicationLocation = @"C:\Users\widoo\source\repos\Ga\bin\Debug\net5.0-windows\Ga.exe";
 
                 key.SetValue("", "URL:" + FriendlyName);
@@ -66,7 +48,7 @@ namespace Ga
 
                 using (var defaultIcon = key.CreateSubKey("DefaultIcon"))
                 {
-                    defaultIcon.SetValue("", applicationLocation + ",1");
+                    defaultIcon.SetValue("", applicationLocation + ",-1");
                 }
 
                 using (var commandKey = key.CreateSubKey(@"shell\open\command"))

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Configuration;
 using System.Net.Mail;
 using System.Net;
+using GestionDesAbsencesv1.Models;
 
 namespace Ga.ViewModels
 {
@@ -15,7 +16,10 @@ namespace Ga.ViewModels
     {
         readonly DB dB = new();
 
-        string _loginId;
+
+      
+
+        string _loginId = "andry@mail.com";
         public string LoginId { get => _loginId; set => OnPropertyChanged(ref _loginId, value); }
 
         public void Login()
@@ -36,6 +40,8 @@ namespace Ga.ViewModels
 
         public void sendEmail(string mail)
         {
+            string token = generatetoken(mail);
+
             var smtpServerName = ConfigurationManager.AppSettings["SmtpServer"];
             var port = ConfigurationManager.AppSettings["Port"];
             var senderEmailId = ConfigurationManager.AppSettings["SenderEmailId"];
@@ -44,8 +50,9 @@ namespace Ga.ViewModels
             string to = mail;
             string from = "andry@gmail.com";
             MailMessage message = new MailMessage(from, to);
-            message.Subject = "Using the new SMTP client.";
-            message.Body = @"Using this new feature, you can send an email message from an application very easily.";
+            message.Subject = "Connexion";
+            message.Body = @"http://localhost:3000/login/"+ token;
+
             SmtpClient client = new SmtpClient(smtpServerName,Convert.ToInt32(port));
             // Credentials are necessary if the server requires the client
             // to authenticate before it will send email on the client's behalf.
@@ -53,15 +60,34 @@ namespace Ga.ViewModels
             client.Credentials = new NetworkCredential(senderEmailId, senderPassword);
             try
             {
-                client.Send(message);
+                //client.Send(message);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught in CreateTestMessage2(): {0}",
                     ex.ToString());
             }
-
+            PubNubViewModel pnvm = new("room-" + token);
+            pnvm.Init();
+            pnvm.Listen();
 
         }
+
+        public string generatetoken(string mail)
+        {
+            string token = null;
+
+            User user = dB.Users.Where(u => u.Mail == mail).FirstOrDefault();
+
+            var id = user.UserId;
+
+            DateTime date = DateTime.Now;
+            DateTime dateOnly = date.Date;
+
+            token = id + dateOnly.Day.ToString()+dateOnly.Month.ToString()+dateOnly.Year.ToString();
+
+            return token;
+        }
+
     }
 }
