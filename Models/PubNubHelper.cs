@@ -22,8 +22,8 @@ namespace Ga.Models
             //Init
             ChannelName = channelName;
             PNConfiguration pnConfiguration = new PNConfiguration("Gestion-Desktop");
-            pnConfiguration.SubscribeKey = "sub-c-866a22c2-b18a-11ec-8753-fe86d55faee6";
-            pnConfiguration.PublishKey = "pub-c-20c613e5-57f4-498c-b33e-e503064f63a7";
+            pnConfiguration.SubscribeKey = "";
+            pnConfiguration.PublishKey = "";
 
             pubnub = new Pubnub(pnConfiguration);
 
